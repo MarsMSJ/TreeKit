@@ -1,12 +1,14 @@
-#ifdef _BINARYTREE_HPP
+#ifndef _BINARYTREE_HPP
 #define _BINARYTREE_HPP
 
 #include <iostream>
 #include <queue>
 #include <stack>
+
 using namespace std;
 
-namespace TreeKit::BinaryTree {
+namespace TreeKit {
+ namespace BinaryTree {
 
 	/*
 	 Simple node class with left and right child links. Includes
@@ -14,11 +16,11 @@ namespace TreeKit::BinaryTree {
 	node.
 	*/
 	template<class V>
-	class BinaryTreeNode{
+	class BinaryNode{
 	 public: 
 	  V Value;
-	  BinaryTreeNode *Left;
-	  BinaryTreeNode *Right;
+	  BinaryNode *Left;
+	  BinaryNode *Right;
 
 	/* This is optional. Used when storing duplicate
 	values with the same tree node. Normally, for
@@ -28,7 +30,7 @@ namespace TreeKit::BinaryTree {
 	  size_t Count; //For storing duplicate values
 
 	//Constructor, for convenience
-	  BinaryTreeNode( V value ) {
+	  BinaryNode( V value ) {
 	   Value = value; 
 	   Count = 1;
 	  }
@@ -46,14 +48,14 @@ namespace TreeKit::BinaryTree {
  	Time Complexity: O(logN)
 	Function goes level by level finding the next available space. */
 	template<class V> 
-	auto InsertAnyWhere( V value, BinaryTreeNode<V> *root ) {
+	auto InsertAnyWhere( V value, BinaryNode<V> *root ) {
 	 if( root == nullptr ) {
-	  return new BinaryTreeNode( value );
+	  return new BinaryNode<V>( value );
 	 }
 
-	 queue<BinaryTreeNode<V> *> q;
+	 queue<BinaryNode<V> *> q;
 	 q.push( root );
-	 auto newNode = new BinaryTreeNode<V>( value );
+	 auto newNode = new BinaryNode<V>( value );
 
 	 while( !q.empty() ) {
 	  auto node = q.front();
@@ -87,15 +89,15 @@ namespace TreeKit::BinaryTree {
 	  */
 
 	template<class V>
-	auto InsertIntoBST( V value, BinaryTreeNode *root ) {
+	auto InsertIntoBST( V value, BinaryNode<V> *root ) {
 	 if( root == nullptr ) {
-	  return new BinaryTreeNode( value );
+	  return new BinaryNode<V>( value );
 	 }
 
-	 auto newNode = new BinaryTreeNode<V>( value );
+	 auto newNode = new BinaryNode<V>( value );
 	 auto parent = root;
 	 auto node = root;
-	 stack<BinaryTreeNode<V>> s;
+	 stack<BinaryNode<V>> s;
 	 s.push( node );
 
 	 while( node != nullptr ) {
@@ -119,6 +121,6 @@ namespace TreeKit::BinaryTree {
 	 } 
 	 return newNode;
 	}//func end
-
-} //namespace end
+ } // namespace BinaryTree end
+} //namespace TreeKit end
 #endif
