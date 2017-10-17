@@ -3,7 +3,7 @@
 
 #include "BinaryTree.hpp"
 
-TreeKit{
+namespace TreeKit {
 	
 /*
  Binary Tree Namespace : TreeKit::BinaryTree

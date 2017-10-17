@@ -8,7 +8,7 @@
 using namespace std;
 
 namespace TreeKit {
- namespace BinaryTree {
+ namespace BinaryTreeKit {
 
 	/*
 	 Simple node class with left and right child links. Includes
