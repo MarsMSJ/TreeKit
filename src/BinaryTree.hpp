@@ -12,7 +12,9 @@ namespace TreeKit {
 
 	/*
 	 Simple node class with left and right child links. Includes
-	an optional count field for storing duplicate values with one
+	an optional count field. The count field is useful for repr-
+	esenting duplicate values without storing them. Another use-
+	ful function is to store the count of nodes below a given
 	node.
 	*/
 	template<class V>
@@ -21,31 +23,24 @@ namespace TreeKit {
 	  V Value;
 	  BinaryNode *Left;
 	  BinaryNode *Right;
-
-	/* This is optional. Used when storing duplicate
-	values with the same tree node. Normally, for
-	duplicate values, we create a duplicate node for
-	the value.
-	*/
-	  size_t Count; //For storing duplicate values
+	  size_t Count; // Optional
 
 	//Constructor, for convenience
 	  BinaryNode( V value ) {
 	   Value = value; 
 	   Count = 1;
 	  }
-
-	//Insert for stacking duplicate values
 	 
 	};//class end
 
-	/* Insert's into the next available position in the tree. If a nullptr
+	/*
+	 Insert's into the next available position in the tree. If a nullptr
 	pointer is passed for the root, the function returns the new root. 
 	Otherwise, given a root, the function returns the node inserted. Use-
-	ful for generating random binary trees to "fix" or feed to heap alg-
-	orithms.
+	ful for generating random binary trees to "fix" by balancing or heapify
+	algorithms.
 
- 	Time Complexity: O(logN)
+ 	Time Complexity: O(N) Worst-Case 
 	Function goes level by level finding the next available space. */
 	template<class V> 
 	auto InsertAnyWhere( V value, BinaryNode<V> *root ) {
@@ -78,15 +73,17 @@ namespace TreeKit {
 	 return newNode;
 	} //func end
 
-	/* Performs a binary search insert. If a null point is passed the
+	/*
+	 Performs a binary search insert. If a nullptr is passed the
 	the function returns the new root. Otherwise, given a root, the 
 	function returns the node inserted. Useful for generating bianry
-	trees to feed to our balancing, transversal, etc. algorithms.
+	search trees to run balancing, transversal, and other  algorithms.
 	
 	
 	Complexity: O(logN)
-   	Function performs an unsuccessul search and the insert appropriately.
-	  */
+   	Function performs an unsuccessul search and then inserts appropr-
+	iately at the last parent found along the path.
+	*/
 
 	template<class V>
 	auto InsertIntoBST( V value, BinaryNode<V> *root ) {
