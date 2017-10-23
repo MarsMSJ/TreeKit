@@ -61,6 +61,10 @@ This is NOT a binary search tree.
 } //namespace Binary Tree end
 	
 namespace TernaryTreeKit {
+
+        //TO DO
+        //Read dictionary file, create TST from dictionary
+        //Read dictionary file, select random words to insert into TST:
 	} //namespace Ternary Tree end
 
 } //namespace TreeKit end
