@@ -15,13 +15,13 @@ namespace BinaryTreeKit {
  Generates a random binary tree with nodes random put everywhere.
 This is NOT a binary search tree.
 */
- BinaryTreeNode<int> * GenerateRandomBinaryTree( size_t size, int upperBound ) {
+ BinaryNode<int> * GenerateRandomBinaryTree( size_t size, int upperBound ) {
   if( size == 0 ) {
    return nullptr;
   }
  
   vector<int> v = GenerateRandomIntegers( size, upperBound );
-  BinaryTreeNode<int> *root;
+  BinaryNode<int> *root;
 
   for( auto i : v ) {
    if( root == nullptr ) {
@@ -38,13 +38,13 @@ This is NOT a binary search tree.
 /*
  Generates a random binary search tree;
 */
- BinaryTreeNode<int> * GenerateRandomBinarySearchTree( size_t size, int upperBound ) {
+ BinaryNode<int> * GenerateRandomBinarySearchTree( size_t size, int upperBound ) {
   if( size == 0 ) {
    return nullptr;
   }
  
   vector<int> v = GenerateRandomIntegers( size, upperBound );
-  BinaryTreeNode<int> *root;
+  BinaryNode<int> *root;
 
   for( auto i : v ) {
    if( root == nullptr ) {
