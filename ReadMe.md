@@ -1,7 +1,7 @@
 
 # Tree Kit
 
-Simple code kit to include into your c++ programs so you can jump straight into your algorithms. Can generate binary trees and binary search trees randomly. 
+Simple code kit to include into your c++ programs so you can jump straight into your algorithms. Can generate binary trees and binary search trees randomly.
 
 ## Getting Started
 
@@ -21,8 +21,8 @@ In order to build and run this code you'll need a *C++ compiler compatible with 
 * MacOS High Sierra
 * MacOS Sierra
 * Linux4Tegra (L4T)
- * L4T aka Ubuntu 14.04 LTS. Custom NVidia Ubuntu distro for Jetson embedded hardware.
- * The *-std=c++14* flag is required.
+  * L4T aka Ubuntu 14.04 LTS. Custom NVidia Ubuntu distro for Jetson embedded hardware.
+  * The *-std=c++14* flag is required.
 
 ### Unit Testing
 
