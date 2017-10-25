@@ -30,7 +30,7 @@ namespace TreeKit {
 	  BinaryNode( V value ) {
 	   Value = value; 
 		 Count = 1;
-		 Left = Right == nullptr;
+		 Left = Right = nullptr;
 	  }
 	 
 	};//class end
