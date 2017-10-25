@@ -16,26 +16,19 @@ namespace{
 			
 			while( !s.empty() ) {
 				auto node = s.top(); s.pop();
-				str+= node->Value;
 				
-				if( node->Left != nullptr ) {
-					s.push( node->Left );
+				if( node == nullptr ) {
+					str+= "X";
+					continue;
 				}
-				else {
-					str+="X";
-				}
-				if( node->Right != nullptr ) {
-					s.push( node->Right );
-				}
-				else {
-					str+="X";
-				}			
+				str+= node->Value;		
+			  s.push( node->Right );
+				s.push( node->Left );					
 			}
-			
 			return str;
 		}
 		
-	TEST( Test_BinaryTreeKit, InsertAnyWhere ) {
+	TEST( Test_BinaryTreeKit, InsertAnyWhere_GeneralTest) {
 		string input = "ABCDEF";
 		string test_preorder = "ABDXXEXXCFXXX";
 		bst::BinaryNode<char> *root = nullptr;
@@ -45,38 +38,27 @@ namespace{
 				root = bst::InsertAnyWhere<char>( c, nullptr );
 				continue;
 			}		
-			std::cout << c << std::endl;
-			bst:InsertAnyWhere( c, root );
+			bst::InsertAnyWhere<char>( c, root );
 		}
-		
-		// auto GetPreOrderStr = []( bst::BinaryNode<char> *root ){
-		// 	stack<BinaryNode<char> *> s;
-		// 	s.push( root );
-		// 	string str = "";
-			
-		// 	while( !s.empty() ) {
-		// 		auto node = s.top(); s.pop();
-		// 		str+= node->Value;
-				
-		// 		if( node->Left != nullptr ) {
-		// 			s.push( node->Left );
-		// 		}
-		// 		else {
-		// 			str+="X";
-		// 		}
-		// 		if( node->Right != nullptr ) {
-		// 			s.push( node->Right );
-		// 		}
-		// 		else {
-		// 			str+="X";
-		// 		}			
-		// 	}
-		// }
-		
 		string output = GetPreOrderStr(root);
+		EXPECT_EQ( output, test_preorder);
+	}
 	
-		//EXPECT_EQ( output, test_preorder);
-		EXPECT_TRUE( output == test_preorder);
+	TEST( Test_BinaryTreeKit, InsertIntoBST_GeneralTest ) {
+		string input = "CBEAFD";
+		string test_preorder = "CBAXXXEDXXFXX";
+		bst::BinaryNode<char> *root = nullptr;
 		
+		for( auto c : input ) {
+			if( root == nullptr ) {
+				root = bst::InsertIntoBST<char>( c, nullptr );
+				continue;
+			}		
+			bst::InsertIntoBST<char>( c, root );
+		}
+		std::cout << test_preorder << std::endl;
+		string output = GetPreOrderStr(root);
+		std::cout << output << std::endl;
+		EXPECT_EQ( output, test_preorder);
 	}
 }

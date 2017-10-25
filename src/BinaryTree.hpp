@@ -59,8 +59,7 @@ namespace TreeKit {
 		q.pop();
 			
 	  if( node->Left == nullptr ) {
-		 node->Left = newNode;
-		 cout << "BREAK " << endl;
+		 node->Left = newNode;		 
 	   break;
 	  }
 
@@ -97,14 +96,10 @@ namespace TreeKit {
 	 auto newNode = new BinaryNode<V>( value );
 	 auto parent = root;
 	 auto node = root;
-	 stack<BinaryNode<V> *> s;
-	 s.push( node );
-
+	 
 	 while( node != nullptr ) {
 	  parent = node;
-	  node = s.top();
-	  s.pop();
-
+	 
 	  if( value < node->Value ) {
 	   node = node->Left;
 	  }
