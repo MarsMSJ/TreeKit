@@ -29,13 +29,11 @@ numbers. We use this function to avoid modulo bias.
    vector<int> v;
    srand(time(NULL));
    uniform_int_distribution<> dist( 0, upperBound );
-
    for( size_t i = 0; i < size; i++ ) {
     v[i] = dist( rand );
    }
    return v; 
   }
- #endif 
 
 /*
  For Linux and MacOS we use arc4random_uniform. For some 
@@ -45,7 +43,7 @@ to be installed. When compiling pass the -lbsd flag.
  Example L4T: g++-7 RandomBase.hpp -c -lbsd -std=c++14
 */
 
- #if defined(__APPLE__) || defined(__linux__)
+ #elif defined(__APPLE__) || defined(__linux__)
 
   vector<int> GetRandomIntegers( size_t size, int upperBound ) {
    vector<int> v;

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <queue>
 #include <stack>
+#include <string>
 
 using namespace std;
 
@@ -21,14 +22,15 @@ namespace TreeKit {
 	class BinaryNode{
 	 public: 
 	  V Value;
-	  BinaryNode *Left;
-	  BinaryNode *Right;
+	  BinaryNode<V> *Left;
+	  BinaryNode<V> *Right;
 	  size_t Count; // Optional
 
 	//Constructor, for convenience
 	  BinaryNode( V value ) {
 	   Value = value; 
-	   Count = 1;
+		 Count = 1;
+		 Left = Right == nullptr;
 	  }
 	 
 	};//class end
@@ -52,12 +54,13 @@ namespace TreeKit {
 	 q.push( root );
 	 auto newNode = new BinaryNode<V>( value );
 
-	 while( !q.empty() ) {
+	 while( !q.empty() ) {		 
 	  auto node = q.front();
-	  q.pop();
-
+		q.pop();
+			
 	  if( node->Left == nullptr ) {
-	   node->Left = newNode;
+		 node->Left = newNode;
+		 cout << "BREAK " << endl;
 	   break;
 	  }
 
@@ -94,7 +97,7 @@ namespace TreeKit {
 	 auto newNode = new BinaryNode<V>( value );
 	 auto parent = root;
 	 auto node = root;
-	 stack<BinaryNode<V>> s;
+	 stack<BinaryNode<V> *> s;
 	 s.push( node );
 
 	 while( node != nullptr ) {
@@ -118,6 +121,7 @@ namespace TreeKit {
 	 } 
 	 return newNode;
 	}//func end
+	
  } // namespace BinaryTree end
 } //namespace TreeKit end
 #endif

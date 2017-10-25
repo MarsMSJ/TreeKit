@@ -20,7 +20,7 @@ This is NOT a binary search tree.
    return nullptr;
   }
  
-  vector<int> v = GenerateRandomIntegers( size, upperBound );
+  vector<int> v = GetRandomIntegers( size, upperBound );
   BinaryNode<int> *root;
 
   for( auto i : v ) {
@@ -29,7 +29,7 @@ This is NOT a binary search tree.
     continue;
    }   
 
-   InsertAnyWhere( i, root ); 
+   InsertAnyWhere<int>( i, root ); 
   }
 
   return root;
@@ -43,7 +43,7 @@ This is NOT a binary search tree.
    return nullptr;
   }
  
-  vector<int> v = GenerateRandomIntegers( size, upperBound );
+  vector<int> v = GetRandomIntegers( size, upperBound );
   BinaryNode<int> *root;
 
   for( auto i : v ) {
@@ -52,12 +52,12 @@ This is NOT a binary search tree.
     continue;
    }   
 
-   InsertAnyWhere( i, root ); 
+   InsertAnyWhere<int>( i, root ); 
   }
 
   return root;
 	//Generate Random Binary Heap <int> 
-
+ }
 } //namespace Binary Tree end
 	
 namespace TernaryTreeKit {
