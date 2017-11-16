@@ -19,13 +19,13 @@ This is NOT a binary search tree.
   if( size == 0 ) {
    return nullptr;
   }
- 
-  vector<int> v = GetRandomIntegers( size, upperBound );
+  vector<int> V;
+  GetRandomIntegers( V,  size, upperBound );
   BinaryNode<int> *root;
 
-  for( auto i : v ) {
+  for( auto i : V ) {
    if( root == nullptr ) {
-    root = InsertAnyWhere<int>( v[0], nullptr );
+    root = InsertAnyWhere<int>( V[0], nullptr );
     continue;
    }   
 
@@ -43,12 +43,13 @@ This is NOT a binary search tree.
    return nullptr;
   }
  
-  vector<int> v = GetRandomIntegers( size, upperBound );
+  vector<int> V; 
+  GetRandomIntegers( V, size, upperBound );
   BinaryNode<int> *root;
 
-  for( auto i : v ) {
+  for( auto i :V ) {
    if( root == nullptr ) {
-    root = InsertIntoBST<int>( v[0], nullptr );
+    root = InsertIntoBST<int>( V[0], nullptr );
     continue;
    }   
 

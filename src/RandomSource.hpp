@@ -24,15 +24,17 @@ numbers. We use this function to avoid modulo bias.
 */
  
  #ifdef _WIN32_
-
-  vector<int> GetRandomIntegers( size_t size, int upperBound ) {
-   vector<int> v;
+ 
+ /*
+  Parameters: vector<int> V 
+ */
+  void GetRandomIntegers( vector<int> &V, size_t size, int upperBound ) {
    srand(time(NULL));
    uniform_int_distribution<> dist( 0, upperBound );
+
    for( size_t i = 0; i < size; i++ ) {
-    v[i] = dist( rand );
+    V.push_back( dist( rand ) );
    }
-   return v; 
   }
 
 /*
@@ -45,13 +47,10 @@ to be installed. When compiling pass the -lbsd flag.
 
  #elif defined(__APPLE__) || defined(__linux__)
 
-  vector<int> GetRandomIntegers( size_t size, int upperBound ) {
-   vector<int> v;
-
+  void GetRandomIntegers( vector<int> &V, size_t size, int upperBound ) {
    for( size_t i = 0; i < size; i++ ) {
-    v[i] = arc4random_uniform( upperBound );
+    V.push_back( arc4random_uniform( upperBound ) );
    }
-   return v; 
   }
 
 
