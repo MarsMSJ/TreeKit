@@ -80,7 +80,8 @@ Run the test.
 ./testApp
 ```
 
-I have also included a script that does the above if you follow my folder layout. Just remember to chmod the script.
+I have also included a script that does the above if you follow my folder layout. Just remember to chmod the script before running the script.
 ```
 chmod +x script_compileTest.sh 
+./script_compileTest.sh
 ```
