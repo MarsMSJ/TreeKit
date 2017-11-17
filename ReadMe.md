@@ -24,16 +24,35 @@ In order to build and run this code you'll need a *C++ compiler compatible with 
   * L4T aka Ubuntu 14.04 LTS. Custom NVidia Ubuntu distro for Jetson embedded hardware.
   * The *-std=c++14* flag is required.
 
+
+### Random Integer Generation
+
+If you simply want to use the *random number generator* portion simply pass an *lvalue reference* of vector<int> type to GetRandomIntegers along with a size and upper bound parameter. For random integers we use arc4random_uniform on Mac/Ubuntu and on Windows we use std::rand and uniform_int_distribution (to avoid modulo bias.) 
+
+```
+/**
+	We want 10 integers from 0 to 1000 stored in our std::vector<int> V.
+*/
+std::vector<int> V;
+GetRandomIntegers( V, 10, 1000)
+```
+
 ### Unit Testing
 
-If you want to run the unit test, you'll also need to clone and build the *GoogleTest* source. I highly recommend building the code as library. I created a directory named *library* and built the source to this folder.
+If you want to run the unit test, you'll also need to clone and build the *GoogleTest* source. There is a *Test_main.cpp* provided. If you're not familiar with running these test I have an easy way of doing this described below.
 
-First clone the *GoogleTest* repository.
+
+ 
+
+First clone the *GoogleTest* repository to the same folder containing the TreeGraphKit. See below.
+
+
+
 ```
 git clone https://github.com/google/googletest.git
 ```
 
-Go to the directory and make a directory called (wait for it) *library.* Go to this directory.
+Go to the *googletest* directory and make a directory called (wait for it) *library.* Go to this directory.
 
 ```
 cd googletest/googletest
@@ -50,10 +69,15 @@ ar -rv libgtest.a gtest-all.o
 
 Now go src_test directory located in the TreeGraphKit folder and build the test.
 ```
-g++-7 -isystem <PathToGoogleTest>/googletest/googletest/include -pthread *.cpp <PathToGoogleTest>/googletest/googletest/library/libgtest.a -o testApp
+g++-7 -isystem ~/Dev/CPP/Opensource/googletest/googletest/include -pthread *.cpp ~/Dev/CPP/OpenSource/googletest/googletest/library/libgtest.a -o testApp
 ```
 
 Run the test.
 ```
 ./testApp
+```
+
+I have also included a script that does the above if you follow my folder layout. Just remember to chmod the script.
+```
+chmod +x script_compileTest.sh 
 ```
