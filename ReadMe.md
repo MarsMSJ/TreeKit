@@ -51,7 +51,7 @@ git clone https://github.com/google/googletest.git
 
 How the folder layout should look like. 
 
-![Folder Layout](https://github.com/MarsMSJ/TreeGraphKit/raw/Images/images/FolderArrangement.png )
+![Folder Layout](https://github.com/MarsMSJ/TreeKit/raw/Images/images/FolderArrangement.png )
 
 
 Go to the *googletest* directory and make a directory called (wait for it) *library.* Go to this directory.
