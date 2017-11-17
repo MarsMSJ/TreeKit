@@ -1,6 +1,6 @@
 
 # Tree Kit
-
+*Graph portion comming soon.*
 Simple code kit to include into your c++ programs so you can jump straight into your algorithms. Can generate binary trees and binary search trees randomly.
 
 ## Getting Started
