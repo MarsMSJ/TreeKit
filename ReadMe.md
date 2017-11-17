@@ -31,7 +31,7 @@ If you simply want to use the *random number generator* portion simply pass an *
 
 ```
 /**
-	We want 10 integers from 0 to 1000 stored in our std::vector<int> V.
+	We want 10 integers from 0 to 1000 generated and stored in our std::vector<int> V.
 */
 std::vector<int> V;
 TreeKit::GetRandomIntegers( V, 10, 1000)
