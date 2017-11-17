@@ -46,7 +46,7 @@ If you want to run the unit test, you'll also need to clone and build the *Googl
 
 First clone the *GoogleTest* repository to the same folder containing the TreeGraphKit. See below.
 
-
+![Alt text](/../Images/image/FolderArrangement.png?raw=true "Folder Arrangement")
 
 ```
 git clone https://github.com/google/googletest.git
