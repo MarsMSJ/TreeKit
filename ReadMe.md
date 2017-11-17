@@ -34,7 +34,7 @@ If you simply want to use the *random number generator* portion simply pass an *
 	We want 10 integers from 0 to 1000 stored in our std::vector<int> V.
 */
 std::vector<int> V;
-GetRandomIntegers( V, 10, 1000)
+TreeKit::GetRandomIntegers( V, 10, 1000)
 ```
 
 ### Unit Testing
