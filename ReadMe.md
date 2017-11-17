@@ -30,7 +30,7 @@ In order to build and run this code you'll need a *C++ compiler compatible with 
 If you simply want to use the *random number generator* portion simply pass an *lvalue reference* of vector<int> type to GetRandomIntegers along with a size and upper bound parameter. For random integers we use arc4random_uniform on Mac/Ubuntu and on Windows we use std::rand and uniform_int_distribution (to avoid modulo bias.) 
 
 ```
-/**
+/*
 	We want 10 integers from 0 to 1000 generated and stored in our std::vector<int> V.
 */
 std::vector<int> V;
