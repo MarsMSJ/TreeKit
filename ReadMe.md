@@ -10,11 +10,11 @@ In order to build and run this code you'll need a *C++ compiler compatible with 
 ### Prerequisites
 
 * [GNU Compiler](https://gcc.gnu.org)
- * I used GCC 7.2.0 in both *MacOS High Sierra* and *L4T*.
+  * I used GCC 7.2.0 in both *MacOS High Sierra* and *L4T*.
 * [Homebrew](https://brew.sh)
- * *Optional* but I highly recommend *Homebrew* to install GCC if you're using *MacOS.* It's awesome!
+  * *Optional* but I highly recommend *Homebrew* to install GCC if you're using *MacOS.* It's awesome!
 * [Google Test](https://github.com/google/googletest)
- * *Optional* if you would like to run the unit tests.
+  * *Optional* if you would like to run the unit tests.
 
 ### Platforms
 
