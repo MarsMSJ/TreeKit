@@ -29,8 +29,8 @@ namespace TreeKit {
 	//Constructor, for convenience
 	  BinaryNode( V value ) {
 	   Value = value; 
-		 Count = 1;
-		 Left = Right = nullptr;
+           Count = 1;
+	   Left = Right = nullptr;
 	  }
 	 
 	};//class end
@@ -45,11 +45,7 @@ namespace TreeKit {
  	Time Complexity: O(N) Worst-Case 
 	Function goes level by level finding the next available space. */
 	template<class V> 
-	auto InsertAnyWhere( V value, BinaryNode<V> *root ) {
-	 if( root == nullptr ) {
-	  return new BinaryNode<V>( value );
-	 }
-
+	auto InsertAnyWhere( V value, BinaryNode<V> *&root ) {
 	 queue<BinaryNode<V> *> q;
 	 q.push( root );
 	 auto newNode = new BinaryNode<V>( value );
@@ -88,11 +84,7 @@ namespace TreeKit {
 	*/
 
 	template<class V>
-	auto InsertIntoBST( V value, BinaryNode<V> *root ) {
-	 if( root == nullptr ) {
-	  return new BinaryNode<V>( value );
-	 }
-
+	auto InsertIntoBST( V value, BinaryNode<V> *&root ) {
 	 auto newNode = new BinaryNode<V>( value );
 	 auto parent = root;
 	 auto node = root;

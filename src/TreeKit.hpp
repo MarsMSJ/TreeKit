@@ -21,12 +21,12 @@ This is NOT a binary search tree.
   }
   vector<int> V;
   GetRandomIntegers( V,  size, upperBound );
-  BinaryNode<int> *root;
+  auto root = new BinaryNode<int>(0);
 
   for( auto i : V ) {
    if( root == nullptr ) {
-    root = InsertAnyWhere<int>( V[0], nullptr );
-    continue;
+     root->Value = V[0];
+     continue;
    }   
 
    InsertAnyWhere<int>( i, root ); 
@@ -49,7 +49,7 @@ This is NOT a binary search tree.
 
   for( auto i :V ) {
    if( root == nullptr ) {
-    root = InsertIntoBST<int>( V[0], nullptr );
+    root->Value = V[0];
     continue;
    }   
 
