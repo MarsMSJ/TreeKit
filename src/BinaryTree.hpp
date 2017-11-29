@@ -39,9 +39,8 @@ namespace TreeKit {
 	 Insert's into the next available position in the tree. If a nullptr
 	pointer is passed for the root, the function returns the new root. 
 	Otherwise, given a root, the function returns the node inserted. Use-
-	ful for generating random binary trees to "fix" by balancing or heapify
-	algorithms.
-
+	ful for generating random binary trees.
+	
  	Time Complexity: O(N) Worst-Case 
 	Function goes level by level finding the next available space. */
 	template<class V> 
@@ -75,8 +74,7 @@ namespace TreeKit {
 	 Performs a binary search insert. If a nullptr is passed the
 	the function returns the new root. Otherwise, given a root, the 
 	function returns the node inserted. Useful for generating bianry
-	search trees to run balancing, transversal, and other  algorithms.
-	
+	search trees.
 	
 	Complexity: O(logN)
    	Function performs an unsuccessul search and then inserts appropr-
