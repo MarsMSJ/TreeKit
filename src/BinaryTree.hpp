@@ -44,7 +44,7 @@ namespace TreeKit {
  	Time Complexity: O(N) Worst-Case 
 	Function goes level by level finding the next available space. */
 	template<class V> 
-	auto InsertAnyWhere( V value, BinaryNode<V> *&root ) {
+	auto InsertNextAvailable( V value, BinaryNode<V> *&root ) {
 	 queue<BinaryNode<V> *> q;
 	 q.push( root );
 	 auto newNode = new BinaryNode<V>( value );

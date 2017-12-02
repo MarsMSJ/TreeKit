@@ -28,17 +28,17 @@ namespace{
 			return str;
 		}
 		
-	TEST( Test_BinaryTreeKit, InsertAnyWhere_GeneralTest) {
+	TEST( Test_BinaryTreeKit, InsertNextAvailable_GeneralTest) {
 		string input = "ABCDEF";
 		string test_preorder = "ABDXXEXXCFXXX";
 		bst::BinaryNode<char> *root = nullptr;
 		
 		for( auto c : input ) {
 			if( root == nullptr ) {
-				root = bst::InsertAnyWhere<char>( c, nullptr );
+				root = new bst::BinaryNode<char>( c );
 				continue;
 			}		
-			bst::InsertAnyWhere<char>( c, root );
+			bst::InsertNextAvailable<char>( c, root );
 		}
 		string output = GetPreOrderStr(root);
 		EXPECT_EQ( output, test_preorder);
@@ -51,7 +51,7 @@ namespace{
 		
 		for( auto c : input ) {
 			if( root == nullptr ) {
-				root = bst::InsertIntoBST<char>( c, nullptr );
+				root = new bst::BinaryNode<char>( c );
 				continue;
 			}		
 			bst::InsertIntoBST<char>( c, root );

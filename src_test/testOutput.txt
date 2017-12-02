@@ -1,0 +1,27 @@
+[==========] Running 7 tests from 2 test cases.
+[----------] Global test environment set-up.
+[----------] 2 tests from Test_BinaryTreeKit
+[ RUN      ] Test_BinaryTreeKit.InsertNextAvailable_GeneralTest
+[       OK ] Test_BinaryTreeKit.InsertNextAvailable_GeneralTest (0 ms)
+[ RUN      ] Test_BinaryTreeKit.InsertIntoBST_GeneralTest
+CBAXXXEDXXFXX
+CBAXXXEDXXFXX
+[       OK ] Test_BinaryTreeKit.InsertIntoBST_GeneralTest (0 ms)
+[----------] 2 tests from Test_BinaryTreeKit (0 ms total)
+
+[----------] 5 tests from Test_RandomBase
+[ RUN      ] Test_RandomBase.RandomIntSet_Empty
+[       OK ] Test_RandomBase.RandomIntSet_Empty (0 ms)
+[ RUN      ] Test_RandomBase.RandomIntSet_Small
+[       OK ] Test_RandomBase.RandomIntSet_Small (0 ms)
+[ RUN      ] Test_RandomBase.RandomIntSet_Medium
+[       OK ] Test_RandomBase.RandomIntSet_Medium (0 ms)
+[ RUN      ] Test_RandomBase.RandomIntSet_Large
+[       OK ] Test_RandomBase.RandomIntSet_Large (62 ms)
+[ RUN      ] Test_RandomBase.RandomIntSet_ZeroBound
+[       OK ] Test_RandomBase.RandomIntSet_ZeroBound (1 ms)
+[----------] 5 tests from Test_RandomBase (63 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 2 test cases ran. (63 ms total)
+[  PASSED  ] 7 tests.
