@@ -17,7 +17,7 @@ namespace TreeKit {
 	ful function is to store the count of nodes below a given
 	node.
 	*/
-	class TeraryNode{
+	class TernaryNode{
 	 public: 
 	  char Character;
 	  BinaryNode *Left;
@@ -45,16 +45,11 @@ namespace TreeKit {
 	iately at the last parent found along the path.
 	*/
 
-	auto InsertIntoTST( string str, TernaryNode *root ) {
+	auto InsertIntoTST( string str, TernaryNode *&root ) {
          if( str.empty() ) {
           return nullptr;
          }
 
-        //Do we have a starting point?
-	 if( root == nullptr ) {
-	  root = new TernaryNode( str[0] );
-	 }
-	
          auto node = root;
          auto parent = root;
          auto lastNode = root;

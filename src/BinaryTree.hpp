@@ -36,45 +36,42 @@ namespace TreeKit {
 	};//class end
 
 	/*
-	 Insert's into the next available position in the tree. If a nullptr
-	pointer is passed for the root, the function returns the new root. 
-	Otherwise, given a root, the function returns the node inserted. Use-
-	ful for generating random binary trees.
+	 Insert's into the next available position in the tree. We must 
+	 declare a root for the tree with an intial value. Otherwise, 
+	 given a root, the function returns the node inserted. Use-
+	 ful for generating random binary trees.
 	
  	Time Complexity: O(N) Worst-Case 
 	Function goes level by level finding the next available space. */
 	template<class V> 
-	auto InsertNextAvailable( V value, BinaryNode<V> *&root ) {
+	void InsertNextAvailable( V&& value, BinaryNode<V> *&root ) {
 	 queue<BinaryNode<V> *> q;
 	 q.push( root );
-	 auto newNode = new BinaryNode<V>( value );
 
 	 while( !q.empty() ) {		 
 	  auto node = q.front();
 		q.pop();
 			
 	  if( node->Left == nullptr ) {
-		 node->Left = newNode;		 
+           node->Left = new BinaryNode<V>( value );		 
 	   break;
 	  }
 
 	  if( node->Right == nullptr ) { 
-	   node->Right = newNode;
+	   node->Right = new BinaryNode<V>( value );
 	   break;
 	  }
 
 	  q.push( node->Left );
 	  q.push( node->Right );
 	 } //while end
-	   
-	 return newNode;
 	} //func end
 
 	/*
-	 Performs a binary search insert. If a nullptr is passed the
-	the function returns the new root. Otherwise, given a root, the 
-	function returns the node inserted. Useful for generating bianry
-	search trees.
+	 Performs a binary search insert. An root node initialized with 
+	 an initial value is required. Given the root, the fuction returns
+	 returns the node inserted. Useful for generating bianry search
+	 trees.
 	
 	Complexity: O(logN)
    	Function performs an unsuccessul search and then inserts appropr-
@@ -82,8 +79,7 @@ namespace TreeKit {
 	*/
 
 	template<class V>
-	auto InsertIntoBST( V value, BinaryNode<V> *&root ) {
-	 auto newNode = new BinaryNode<V>( value );
+	void InsertIntoBST( V&& value, BinaryNode<V> *&root ) {
 	 auto parent = root;
 	 auto node = root;
 	 
@@ -99,12 +95,11 @@ namespace TreeKit {
 	 } //while end;
 	 
 	 if( value < parent->Value ) {
-	  parent->Left = newNode;
+	  parent->Left = new BinaryNode<V>( value );
 	 }
 	 else {
-	  parent->Right = newNode;
+	  parent->Right = new BinaryNode<V>( value );
 	 } 
-	 return newNode;
 	}//func end
 	
  } // namespace BinaryTree end
